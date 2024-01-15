@@ -1,5 +1,5 @@
 Online-Shop
-An online shop ( E-commerce website ) .
+( E-commerce website ) .
 
 I used Nodejs , express and mongoDb to create this.
 
