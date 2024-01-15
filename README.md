@@ -18,6 +18,9 @@ Users can buy items in real time , view them inside the cart and change quantity
 
 
 The admin has a right however to perform CRUD operations in the shop . Authorization was also added so that admins can only perfrom such activities on their products alone .
+
+
+
 ![online-shop-updating prod](https://github.com/Aymanquad/Online_Shop/assets/116382994/e6c3b0cd-3527-4051-afdc-e0ec3c9c910d)
 
 
