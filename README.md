@@ -3,7 +3,7 @@ An online shop ( E-commerce website ) .
 
 I used Nodejs , express and mongoDb to create this.
 
-Before logging In the users can only view the products .
+Before logging In the users can only view the products . 
 
 Users can signup/Login into the shop with ease.
 ![online-shop-signup](https://github.com/Aymanquad/Online_Shop/assets/116382994/1a82b881-61fd-42d5-8686-1ab4c6b13fed)
