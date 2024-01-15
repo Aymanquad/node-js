@@ -1,0 +1,46 @@
+<%- include('../includes/boilerplate.ejs') %>
+    <link rel="stylesheet" href="/public/css files/forms.css">
+    <!-- <link rel="stylesheet" href="/public/css files/product.css"> -->
+</head>
+
+<body>
+   <%- include('../includes/navbar.ejs') %>
+
+    <main>
+
+        <div class="centermydiv">
+            <div class="form-holder">
+                <form class="product-form" action=" /<%if(editing) {%>edit-product<% } else {  %>add-product<% } %> " method="POST">
+                    <div class="form-control">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" value="<%if(editing) {%><%= product.title %> <% } %> ">
+                    </div>
+                    <br><br>
+                    <div class="form-control">
+                        <label for="imageUrl">Image URL</label>
+                        <input type="text" name="imageUrl" id="imageUrl" value="<%if(editing) {%><%= product.imageUrl%><% } %> ">
+                    </div>
+                    <br><br>
+                    <div class="form-control">
+                        <label for="price">Price</label>
+                        <input  name="price" id="price" step="0.01" value="<%if(editing) {%> <%= product.price%> <% } %> ">
+                    </div>
+                    <br><br>
+                    <div class="form-control">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" rows="5"><%if(editing) {%><%= product.description %><% } %> </textarea>
+                    </div>
+                    <br><br>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="btn" type="submit"><% if (editing) { %> Update Product <% } else {  %> Add Product <% } %> </button>
+        
+                    <% if (editing) { %>
+                        <input type="hidden" name="productId" value=" <%= product._id %>">
+                    <% } %> 
+        
+                </form>
+        </div>
+
+
+    </div>
+    </main>

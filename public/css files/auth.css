@@ -1,0 +1,143 @@
+body {
+  /* background-color: #111; */
+  background: url('https://www.10wallpaper.com/wallpaper/2560x1600/1711/Dark_Gray_3D_Triangles_2017_Design_HD_Wallpaper_2560x1600.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  /* color: #ffffff; */
+  letter-spacing: 0.5px;
+ }
+ 
+ .center-div {
+  width: 400px;
+  height: 520px;
+  background-color: rgba(6, 5, 5, 0.495);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 0 40px rgba(230, 230, 233, 0.6);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ .center-div * {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+ }
+ 
+ .center-div h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  margin-bottom: 30px;
+ }
+ 
+ .center-div input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+ }
+ 
+ .center-div button {
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+ }
+ 
+ .centered {
+  text-align: center;
+ }
+
+
+
+
+
+
+
+
+
+
+.login-form{
+    width: 20rem ;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.form-control {
+    margin: 1rem 0;
+    align-items: center;
+    align-content: center;
+    display: flex;
+  }
+  
+  .form-control label,
+  .form-control input,
+  .form-control textarea {
+    /* display: block; */
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+  
+  .form-control input,
+  .form-control textarea {
+    border: 1px solid #a1a1a1;
+    font: inherit;
+    border-radius: 2px;
+  }
+  
+  .form-control input:focus,
+  .form-control textarea:focus {
+    outline-color: #00695c;
+  }
+
+
+
+
+  @media (max-width: 1202px) {
+    .center-div{
+      height: 360px;
+      width: 410px;
+    }
+  }
+  @media (max-width: 460px) {
+    .center-div{
+      height: 295px;
+      width: 310px;
+    }
+  }
+  @media (max-width: 328px) {
+    .center-div{
+      height: 295px;
+      width: 260px;
+    }
+  }
+  @media (max-width: 1070px) {
+    body{
+      height: 100vh;
+      
+    }
+  }
+
+
+

@@ -1,0 +1,26 @@
+extends layout/main-layout.pug 
+
+block styles 
+  link(rel="stylesheet", href="/css files/main.css")
+    
+block content 
+  main
+      .grid 
+        each product in prods 
+          article.card.product-item 
+            header.card_header  
+              h1.product_title #{product.title}
+            .card-image 
+              img(src="https://bw-image.s3.amazonaws.com/s3fs-public/old_img/361074.jpg", alt="book img")
+            .card-content 
+              h2.product_price $19.99
+              p.product_desc this book is white and very interesting . hehe  
+            .card-actions 
+              button.btn Add to cart
+
+
+
+
+
+
+

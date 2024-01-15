@@ -1,0 +1,121 @@
+<!-- <header class="main-header">
+    <nav>
+        <ul class="header-items">
+            <li class="header-item"><a href="/">Shop</a></li>
+            <li class="header-item"><a href="/add-product">Add the Product</a></li>
+        </ul>
+    </nav>
+</header>  -->
+
+
+<div class="backdrop"></div>
+<header class="main-header">
+    <button id="side-menu-toggle">Menu</button>
+    <nav class="main-header__nav">
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        <ul class="main-header__item-list" id="my_ul">
+            <li class="main-header__item">
+                <a  href="/">Shop</a>
+            </li>
+            <li class="main-header__item">
+                <a href="/products">Products</a>
+            </li>
+            
+            <% if(isAuthenticated){ %>
+
+                <li class="main-header__item">
+                    <a  href="/cart">Cart</a>
+                </li>
+                <li class="main-header__item">
+                    <a href="/orders">Orders</a>
+                </li>
+    
+
+                <li class="main-header__item">
+                    <a href="/add-product">Add Product
+                    </a>
+                </li>
+                <li class="main-header__item">
+                    <a href="/admin-products">Admin Products
+                    </a>
+                </li>
+
+            <% } %>
+
+        </ul>
+        <ul class="main-header__item-list">
+            <% if (!isAuthenticated) { %>
+                <li class="main-header__item">
+                    <a  href="/login">Login</a>
+                </li>
+                <li class="main-header__item">
+                    <a  href="/signup">Signup</a>
+                </li>
+            <% } else { %>
+                <li class="main-header__item">
+                    <form action="/logout" method="post">
+                        <button class="btn" type="submit">Logout</button>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    </form>
+                </li>
+            <% } %>
+        </ul>
+        
+    </nav>
+</header>
+
+<nav class="mobile-nav">
+    <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div> 
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+        <ul class="mobile-nav__item-list menu"  id="menu">
+                <li class="mobile-nav__item">
+                    <a  href="/">Shop</a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a  href="/products">Products</a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a href="/cart">Cart</a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a href="/orders">Orders</a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a href="/add-product">Add Product
+                    </a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a  href="/products">Admin Products
+                    </a>
+                </li>
+            </ul>
+            <ul class="main-header__item-list">
+                <% if (!isAuthenticated) { %>
+                    <li class="main-header__item">
+                        <a  href="/login">Login</a>
+                    </li>
+                    <li class="main-header__item">
+                        <a  href="/signup">Signup</a>
+                    </li>
+                <% } else { %>
+                    <li class="main-header__item">
+                        <form action="/logout" method="post">
+                            <button type="submit">Logout</button>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        </form>
+                    </li>
+                <% } %>
+            </ul>
+</nav>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-UIbO8fw3yAuEgyVBCfzgWBjIyqFZGY/57ph6TeMukb+d2Gy6728team+U+g0O9XZ" crossorigin="anonymous">
+

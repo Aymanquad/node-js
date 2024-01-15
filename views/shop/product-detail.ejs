@@ -1,0 +1,22 @@
+<%- include('../includes/boilerplate.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navbar.ejs') %>
+        <main class="centered">
+            <h1><%= product.title %></h1>
+            <hr>
+            <div class="containerrr">
+                <img  src="<%= product.imageUrl %>" alt="<%= product.title %>">
+            </div>
+            <h2><%= product.description %></h2>
+            <h4> $ <%= product.price %></h4>
+
+            <form action="/cart" method="POST">
+                <div class="containerrr">
+                    <button  class="btn" type="submit">Add to Cart</button>
+                </div>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="hidden" name="productId" value="<%= product._id %> ">     <!-- we are doing this in order to retreive the prod id as well here itself -->
+            </form>
+        </main>

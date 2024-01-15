@@ -1,0 +1,32 @@
+{
+  "name": "node-js",
+  "version": "1.0.0",
+  "description": "my first node project",
+  "main": "app1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production MONGO_USER=mohammedaymanquadri MONGO_PASSWORD=Ayman2004 MONGO_STRIPE_KEY=sk_test_51OXnsGSFGCwMN5uJkOwmLvdOfv4W4JdaEHmh0lriXfA4OTxrlAVD3k4hC1Ch76HiVrI2kUEw22aXKVH6u3BtiLm500fh7TgGqt app1.js",
+    "start-shop" : "nodemon app1.js"
+  },
+  "author": "M.A.Q",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.1.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "mongodb": "^6.3.0",
+    "nodemailer": "^6.9.8",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "pug": "^3.0.2",
+    "stripe": "^14.12.0"
+  }
+}

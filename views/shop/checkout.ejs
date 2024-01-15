@@ -1,0 +1,63 @@
+<%- include('../includes/boilerplate.ejs') %>
+<link rel="stylesheet" href="/css files/checkout.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navbar.ejs') %>
+        <main>
+
+
+            <% if( products.length > 0){ %>
+                <ul class="cart__item-list">
+                    <% for(var i=0 ; i< products.length ; i++ ){ %>
+                 
+                        <li class="cart__item">
+                            <% //console.log(products[i]) %> 
+
+
+                            <% var  x =  products[i].quantity %>
+                            <% var  y =  products[i]._id %>
+
+                            <p><%= products[i].title %> </p>   <p id='<%=i+1%>' > Quantity : (<%= x %>)</p>
+                            
+                        </li>
+                    
+                    <%  }  %>
+                </ul>
+
+                <br><br>
+                <hr>
+
+                <!-- <form class="centered" action="/create-order" method="POST" >
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="btn centered" type="submit">Place Order</button>
+                </form> -->
+
+
+            <% }else{ %>
+                <h2>No Products are present in the Cart !!</h2>
+            <% } %> 
+
+            
+            <h2 class="centered">
+                Total price is : $ <%= totalPrice %>
+            </h2>
+
+
+            <div class="centered">
+                <button class="btn" id="order_btn" >Order</button>
+                <script src="https://js.stripe.com/v3/"></script>
+                <script>
+                    var stripe = Stripe('pk_test_51OXnsGSFGCwMN5uJEjws8NeTjzoXySki64How8l17xXZ6Dmk5Qm9IcnGpo5FT0T5dE2dkBNPluqIhDiWwcAoWwqG00LQ6lT5uD');
+                    var ordBtn = document.getElementById('order_btn');
+                    ordBtn.addEventListener('click' , function(){
+                        console.log("button clicked bro..")
+                        stripe.redirectToCheckout({
+                            sessionId: '<%= sessionId %>'
+                        });
+                    });
+                </script>
+            </div>
+
+
+        </main>

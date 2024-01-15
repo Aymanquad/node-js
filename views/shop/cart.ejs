@@ -1,0 +1,65 @@
+<%- include('../includes/boilerplate.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navbar.ejs') %>
+        <main>
+
+
+            <% if( products.length > 0){ %>
+                <div class="centered" style="display: flex;">
+
+                    <ul class="centered" style="max-width: 25rem; align-items: center; justify-content: center;">
+                        <% for(var i=0 ; i< products.length ; i++ ){ %>
+                     
+                            <li class="centered li_item">
+                                <% //console.log(products[i]) %> 
+    
+    
+                                <% var  x =  products[i].quantity %>
+                                <% var  y =  products[i]._id %>
+    
+                                <p><%= products[i].title %> </p>   <p id='<%=i+1%>' > Quantity : (<%= x %>)</p>
+                                
+                                <form action="/updatequantity-of-item" method="POST">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <input type="hidden" name="prodQty"  value="<%= x %>">
+                                    <input type="hidden" name="productId" value="<%= y %>">
+                                    <button id="decqty" class="btn decqty">Decrease Qty</button>
+                                </form>
+    
+    
+                                <form action="/delete-cart-item" method="POST" >
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <input type="hidden" name="productId" value="<%= y %>">
+                                    <button class="btn" type="submit">Delete</button>
+                                </form>
+                            </li>
+                        
+                        <%  }  %>
+                    </ul>
+
+                </div>
+
+
+                <br><br>
+                <hr>
+
+                <!-- <form class="centered" action="/create-order" method="POST" >
+                    <input type="hidden" name="_csrf" value="<%= //csrfToken %>">
+                    <button class="btn centered" type="submit">Place Order</button>
+                </form> -->
+                <div class="centered">
+                    <a class="btn" href="/checkout">CheckOut</a>
+                </div>
+
+            <% }else{ %>
+                <h2>No Products are present in the Cart !!</h2>
+            <% } %> 
+
+            
+            <h2 class="product__title total_price">
+                Total price is : $ <%= totalPrice %>
+            </h2>
+
+        </main>

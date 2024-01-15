@@ -1,0 +1,49 @@
+<%- include('../includes/boilerplate.ejs') %>
+    <!-- <link rel="stylesheet" href="/css files/forms.css"> -->
+    <link rel="stylesheet" href="/css files/auth.css">
+</head>
+
+<body>
+   <%- include('../includes/navbar.ejs') %>
+
+    <main>
+
+
+        <div class="center-div">
+
+            <% if(errorMsg){ %>
+                <div class="user-message user-message--error">
+                    <%= errorMsg %>
+                </div>
+            <% } %>
+            <form class="login-form" action="/signup" method="post">
+                <div class="form-control">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-control">
+                    <label for="email">E-Mail</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="form-control">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword">
+                </div>
+                <button class="btn" type="submit">Signup</button>
+    
+            </form>
+    
+            <!-- <form class="containerrr" action="/signup" method="post">
+                <button class="btn" type="submit">Signup</button>
+            </form> -->
+
+        </div>
+
+            
+
+    </main>
