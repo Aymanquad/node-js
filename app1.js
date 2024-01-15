@@ -22,7 +22,7 @@ const express = require('express');            //    for adding express stuff
 const csurf = require('csurf');
 
 const app = express();                          //
-const csrfProtection = csrf();
+const csrfProtection = csurf();
 
 app.set('view engine' , 'ejs');            //telling express that we r using the template engine on pug/ejs files
 app.set('views' , 'views');               // we using the view function on 'views' folder
@@ -30,11 +30,11 @@ app.set('views' , 'views');               // we using the view function on 'view
 
 
 const store = new MongoDBStore({
-    uri : 'mongodb+srv://mohammedaymanquadri:Ayman2004@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority' ,   // ur mongodb url
+    uri : `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority` ,   // ur mongodb url
     collection : "sessions"   // collection name 
 })
 
-app.use(helmet());
+// app.use(helmet());
 
 app.use(bodyParser.urlencoded({extended:false}));          // parses the input info for us using the external middleware func , Bodyparser.
 app.use(express.static(path.join(__dirname , 'public')));   // to access the 'public' folder throu express statically (elsewise , it can't access it)
@@ -78,7 +78,7 @@ app.use(errorController.get404);
 
 mongoConnnect( ()=>{
     //console.log(process.env.MONGO_USER);
-    app.listen(process.env.PORT  ||  3000);
+    app.listen(3000);
 });
 
 
