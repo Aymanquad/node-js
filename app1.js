@@ -20,6 +20,7 @@ const User = require('./models/users');
 
 const express = require('express');            //    for adding express stuff
 const csurf = require('csurf');
+const { mongoConnect } = require('./util/database');
 
 const app = express();                          //
 const csrfProtection = csurf();
@@ -76,12 +77,19 @@ app.use(errorController.get404);
 
 // app.listen(3000);  
 
-mongoConnnect( ()=>{
-    //console.log(process.env.MONGO_USER);
-    app.listen(3000);
-});
+// mongoConnnect( ()=>{
+//     //console.log(process.env.MONGO_USER);
+//     // app.listen(3000);
+// });
 
-
+mongoConnect(process.env.MONGO_USER)
+    .then(() => {
+        console.log('Connected to MongoDB !'); 
+        app.listen(3000);
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error);
+    });
 
 
 
