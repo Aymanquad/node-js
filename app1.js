@@ -77,19 +77,19 @@ app.use(errorController.get404);
 
 // app.listen(3000);  
 
-// mongoConnnect( ()=>{
-//     //console.log(process.env.MONGO_USER);
-//     // app.listen(3000);
-// });
+mongoConnnect( ()=>{
+    //console.log(process.env.MONGO_USER);
+    app.listen(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority`);
+});
 
-mongoConnect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority`)
-    .then(() => {
-        console.log('Connected to MongoDB !'); 
-        app.listen(3000);
-    })
-    .catch((error) => {
-        console.error('Error connecting to MongoDB:', error);
-    });
+// mongoConnect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority`)
+//     .then(() => {
+//         console.log('Connected to MongoDB !'); 
+//         app.listen(3000);
+//     })
+//     .catch((error) => {
+//         console.error('Error connecting to MongoDB:', error);
+//     });
 
 
 
