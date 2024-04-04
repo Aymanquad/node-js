@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const csrf = require('csurf');                         // to use csrf(cross site response forgery) tokens to provide security to users
 const flash = require('connect-flash');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);  //this is a func
 
