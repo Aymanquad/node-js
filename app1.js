@@ -82,7 +82,7 @@ app.use(errorController.get404);
 //     // app.listen(3000);
 // });
 
-mongoConnect(process.env.MONGO_USER)
+mongoConnect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority`)
     .then(() => {
         console.log('Connected to MongoDB !'); 
         app.listen(3000);
