@@ -7,7 +7,7 @@ const mongoConnect = callback =>{
     
     //putting this inside a method cuz we need to access dis connection from out app.js 
     MongoClient.connect(
-       `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority`
+        `mongodb+srv://mohammedaymanquadri:Ayman2004@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
         )
         .then(client =>{
             console.log("Connected");

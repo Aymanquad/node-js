@@ -79,7 +79,7 @@ app.use(errorController.get404);
 
 mongoConnnect( ()=>{
     //console.log(process.env.MONGO_USER);
-    app.listen(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority`);
+    app.listen(3000);
 });
 
 // mongoConnect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority`)
