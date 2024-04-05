@@ -31,7 +31,7 @@ app.set('views' , 'views');               // we using the view function on 'view
 
 
 const store = new MongoDBStore({
-    uri : `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority` ,   // ur mongodb url
+    uri : `mongodb+srv://mohammedaymanquadri:Ayman2004@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0` ,   // ur mongodb url
     collection : "sessions"   // collection name 
 })
 
