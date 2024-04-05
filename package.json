@@ -5,7 +5,7 @@
   "main": "app1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "nodemon app1.js"
+    "start": "nodemon app1.js"
   },
   "author": "M.A.Q",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "body-parser": "^1.20.2",
     "connect-flash": "^0.1.1",
     "connect-mongodb-session": "^3.1.1",
+    "cors": "^2.8.5",
     "csurf": "^1.11.0",
     "ejs": "^3.1.9",
     "express": "^4.18.2",

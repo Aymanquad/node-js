@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const csrf = require('csurf');                         // to use csrf(cross site response forgery) tokens to provide security to users
 const flash = require('connect-flash');
 // const helmet = require('helmet');
+const cors = require('cors');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);  //this is a func
 
@@ -29,9 +30,14 @@ app.set('view engine' , 'ejs');            //telling express that we r using the
 app.set('views' , 'views');               // we using the view function on 'views' folder
 
 
+app.use(
+    cors({
+      origin: ["http://localhost:3000", "https://online-shop-fryr.onrender.com"],
+    })
+  );
 
 const store = new MongoDBStore({
-    uri : `mongodb+srv://mohammedaymanquadri:Ayman2004@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0` ,   // ur mongodb url
+    uri : `mongodb+srv://mohammedaymanquadri:Ayman2004@cluster0.j7u3c8z.mongodb.net/` ,   // ur mongodb url
     collection : "sessions"   // collection name 
 })
 
