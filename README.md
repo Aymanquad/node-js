@@ -1,3 +1,7 @@
+The website is live , Go check it out on <a href='https://online-shop-fryr.onrender.com/'>LINK</a> 😊
+
+
+
 Online-Shop
 (An open E-commerce website ) .
 I used Nodejs , express and mongoDb to create this.
@@ -24,5 +28,3 @@ The admin has a right however to perform CRUD operations in the shop . Authoriza
 
 
 ![online-shop-updating prod](https://github.com/Aymanquad/Online_Shop/assets/116382994/e6c3b0cd-3527-4051-afdc-e0ec3c9c910d)
-
-The website is live , Go check it out on <a href='https://online-shop-fryr.onrender.com/'></a> 😊
