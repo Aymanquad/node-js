@@ -1,7 +1,6 @@
 {
     "env":{
-        "MONGO_USER" : "mohammedaymanquadri",
-        "MONGO_PASSWORD" : "Ayman2004",
+        "MONGO_URI" : "mongodb+srv://mohammedaymanquadri:Ayman2004@cluster0.j7u3c8z.mongodb.net/",
         "MONGO_STRIPE_KEY" : "sk_test_51OXnsGSFGCwMN5uJkOwmLvdOfv4W4JdaEHmh0lriXfA4OTxrlAVD3k4hC1Ch76HiVrI2kUEw22aXKVH6u3BtiLm500fh7TgGqt"
     }
 }
