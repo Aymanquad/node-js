@@ -83,10 +83,13 @@ app.use(errorController.get404);
 
 // app.listen(3000);  
 
-mongoConnnect( ()=>{
-    //console.log(process.env.MONGO_USER);
-    app.listen("https://online-shop-fryr.onrender.com" || 3000);
+mongoConnect(() => {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
 });
+
 
 // mongoConnect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j7u3c8z.mongodb.net/?retryWrites=true&w=majority`)
 //     .then(() => {
