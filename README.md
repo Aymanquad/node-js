@@ -1,5 +1,5 @@
-The website is live , Go check it out on <a href='https://online-shop-fryr.onrender.com/'>LINK</a> 😊
-
+The website is live , Go check it out on <a href='https://online-shop-fryr.onrender.com/'>Online_Shop</a> 😊
+(It may take about 20 to 30 seconds for the webpage to load :)  )
 
 
 Online-Shop
